@@ -3,15 +3,22 @@ package br.edu.instituicao.service;
 import br.edu.instituicao.model.Aluno;
 import br.edu.instituicao.model.Pessoa;
 import br.edu.instituicao.model.Professor;
-
 import java.util.ArrayList;
 
 public class Secretaria {
 
+    private static Secretaria instance = null;
+
     private ArrayList<Pessoa> membros;
 
-    public Secretaria() {
+    private Secretaria() {
         this.membros = new ArrayList<>();
+    }
+    public static Secretaria getInstance() {
+        if (instance == null) {
+            instance = new Secretaria();
+        }
+        return instance;
     }
 
     public void cadastrarAluno(Aluno aluno) {
@@ -30,7 +37,7 @@ public class Secretaria {
             return;
         }
         System.out.println("========================================");
-        System.out.println("       COMUNIDADE ACADÊMICA             ");
+        System.out.println("       COMUNIDADE ACADEMICA             ");
         System.out.println("========================================");
         for (Pessoa p : membros) {
             System.out.println(p);

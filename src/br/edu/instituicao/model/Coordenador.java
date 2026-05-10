@@ -8,7 +8,6 @@ public class Coordenador extends Professor {
         super(nome, cpf, email, siape, senha);
     }
 
-    // Bônus: Coordenador tem 10h a mais que Professor comum (Desafio Bônus)
     @Override
     public int getHorasAtividade() {
         return super.getHorasAtividade() + BONUS_HORAS;
@@ -16,6 +15,6 @@ public class Coordenador extends Professor {
 
     @Override
     public String toString() {
-        return super.toString(); // já exibe horas com bônus via polimorfismo
+        return super.toString();
     }
 }
